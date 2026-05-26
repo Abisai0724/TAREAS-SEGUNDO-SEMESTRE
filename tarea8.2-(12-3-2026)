@@ -1,0 +1,76 @@
+using System; 
+namespace AutomovilApp 
+{ 
+    // Clase Automovil 
+    class Automovil
+    { 
+        // Atributos 
+        public string marca; 
+        public string modelo; 
+        public int año; 
+        public double velocidad; 
+
+        // Método para mostrar datos 
+        public void MostrarDatos() 
+        { 
+            Console.WriteLine("Marca: " + marca); 
+            Console.WriteLine("Modelo: " + modelo); 
+            Console.WriteLine("Año: " + año); 
+            Console.WriteLine("Velocidad: " + velocidad + " km/h"); 
+        } 
+
+        // Método para acelerar 
+        public void Acelerar(double incremento) 
+        { 
+            velocidad += incremento; 
+            Console.WriteLine("El automóvil aceleró. Velocidad actual: " + velocidad + " km/h"); 
+        } 
+
+        // Método para frenar 
+        public void Frenar(double decremento) 
+        { 
+            velocidad -= decremento; 
+            if (velocidad < 0) 
+            { 
+                velocidad = 0; 
+            } 
+            Console.WriteLine("El automóvil frenó. Velocidad actual: " + velocidad + " km/h"); 
+        } 
+    } 
+
+    class Program 
+    { 
+        static void Main(string[] args) 
+        { 
+            Console.WriteLine("=============================================="); 
+
+            // Crear objeto de la clase Automovil 
+            Automovil auto1 = new Automovil(); 
+
+            // Asignar valores 
+            auto1.marca = "Toyota"; 
+            auto1.modelo = "Corolla"; 
+            auto1.año = 2022; 
+            auto1.velocidad = 0; 
+
+            // Usar métodos 
+            auto1.MostrarDatos(); 
+            auto1.Acelerar(60); 
+            auto1.Frenar(20); 
+
+            Console.WriteLine("=============================================="); 
+            // Auto 2 
+            Automovil auto2 = new Automovil(); 
+            auto2.marca = "DeLorean Motor Company"; 
+            auto2.modelo = " DMC-12"; 
+            auto2.año = 1981; 
+            auto2.velocidad = 0; 
+
+            auto2.MostrarDatos(); 
+            auto2.Acelerar(88); 
+            auto2.Frenar(78); 
+            Console.WriteLine("=============================================="); 
+            Console.ReadKey(); 
+        } 
+    } 
+} 
