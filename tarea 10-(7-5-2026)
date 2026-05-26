@@ -1,0 +1,67 @@
+using System;
+
+public class Caja<T>
+{
+    //Campo privado de tipo T
+    private T Contenido;
+
+    //Constructor que recibe el tipo T
+    public Caja(T contenido)
+    {
+        Contenido = contenido;
+    }
+
+    //Métodos
+    public void Guardar(T nuevoContenido)
+    {
+        Contenido = nuevoContenido;
+    }
+
+    public T Obtener()
+    {
+        return Contenido;
+    }
+
+    public void MostrarDatos()
+    {
+        Console.WriteLine($"El valor de contenido es: {Contenido}");
+        Console.WriteLine($"El tipo de dato de contenido es: {typeof(T).Name}");
+        Console.WriteLine("-----------------------------------");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Instanciando la clase Caja con diferentes tipos de datos");
+        Console.WriteLine();
+
+        // Caja con int
+        Caja<int> cajaInt = new Caja<int>(50);
+        cajaInt.MostrarDatos();
+
+        // Caja con long
+        Caja<long> cajaLong = new Caja<long>(10000000000);
+        cajaLong.MostrarDatos();
+
+        // Caja con double
+        Caja<double> cajaDouble = new Caja<double>(15.75);
+        cajaDouble.MostrarDatos();
+
+        // Caja con string
+        Caja<string> cajaString = new Caja<string>("Hola Mundo");
+        cajaString.MostrarDatos();
+
+        // Caja con decimal
+        Caja<decimal> cajaDecimal = new Caja<decimal>(2500.99m);
+        cajaDecimal.MostrarDatos();
+
+        // Uso de métodos
+        cajaInt.Guardar(80);
+        Console.WriteLine("Nuevo valor guardado en cajaInt:");
+        Console.WriteLine($"Valor obtenido: {cajaInt.Obtener()}");
+
+        Console.ReadLine();
+    }
+}
