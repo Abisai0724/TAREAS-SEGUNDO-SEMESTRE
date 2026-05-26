@@ -1,0 +1,71 @@
+using System; 
+namespace Veterinaria 
+{ 
+    // Clase Mascota 
+    class Mascota 
+    { 
+        // Atributos 
+        public string nombre; 
+        public string especie; 
+        public int edad; 
+        public double peso; 
+
+        // Método para mostrar datos 
+        public void MostrarDatos() 
+        { 
+            Console.WriteLine("Nombre: " + nombre); 
+            Console.WriteLine("Especie: " + especie); 
+            Console.WriteLine("Edad: " + edad + " años"); 
+            Console.WriteLine("Peso: " + peso + " kg"); 
+        } 
+
+        // Método para simular que come 
+        public void Comer() 
+        { 
+            Console.WriteLine(nombre + " está comiendo."); 
+        } 
+
+        // Método para simular que duerme 
+        public void Dormir() 
+        { 
+            Console.WriteLine(nombre + " está durmiendo."); 
+        } 
+    } 
+
+    class Program 
+    { 
+        static void Main(string[] args) 
+        { 
+            Console.WriteLine("========================================="); 
+            // Crear objeto 
+            Mascota mascota1 = new Mascota(); 
+
+            // Asignar valores 
+            mascota1.nombre = "Luna"; 
+            mascota1.especie = "Perro"; 
+            mascota1.edad = 3; 
+            mascota1.peso = 8.5; 
+
+            // Usar métodos 
+            mascota1.MostrarDatos(); 
+            mascota1.Comer(); 
+            mascota1.Dormir(); 
+
+            Console.WriteLine("========================================="); 
+
+            Mascota mascota2 = new Mascota(); 
+
+            mascota2.nombre = "Frodo"; 
+            mascota2.especie = "Gato"; 
+            mascota2.edad = 5; 
+            mascota2.peso = 3.5; 
+  
+            mascota2.MostrarDatos(); 
+            mascota2.Comer(); 
+            mascota2.Dormir(); 
+            Console.WriteLine("========================================="); 
+
+            Console.ReadKey(); 
+        } 
+    } 
+} 
