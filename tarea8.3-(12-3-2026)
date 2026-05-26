@@ -1,0 +1,69 @@
+using System; 
+
+ namespace Escuela 
+{ 
+    // Clase Estudiante 
+    class Estudiante 
+    { 
+        // Atributos 
+        public string nombre; 
+        public int edad; 
+        public string carrera; 
+        public double promedio; 
+
+        // Método para mostrar datos 
+        public void MostrarDatos() 
+        { 
+            Console.WriteLine("Nombre: " + nombre); 
+            Console.WriteLine("Edad: " + edad); 
+            Console.WriteLine("Carrera: " + carrera); 
+            Console.WriteLine("Promedio: " + promedio); 
+        } 
+
+        // Método para verificar si aprobó 
+        public void VerificarAprobado() 
+        { 
+            if (promedio >= 70) 
+            { 
+                Console.WriteLine("El estudiante aprobó."); 
+            } 
+            else 
+            { 
+                Console.WriteLine("El estudiante reprobó."); 
+            } 
+        } 
+    } 
+  
+    class Program 
+    { 
+        static void Main(string[] args) 
+        { 
+            Console.WriteLine("===================================="); 
+            // Crear objeto 
+            Estudiante alumno1 = new Estudiante(); 
+
+            // Asignar valores 
+            alumno1.nombre = "Carlos"; 
+            alumno1.edad = 20; 
+            alumno1.carrera = "Ingeniería"; 
+            alumno1.promedio = 85; 
+
+            // Usar métodos 
+            alumno1.MostrarDatos(); 
+            alumno1.VerificarAprobado(); 
+              Console.WriteLine("===================================="); 
+            Estudiante alumno2 = new Estudiante(); 
+
+            alumno2.nombre = "Maria "; 
+            alumno2.edad = 19; 
+            alumno2.carrera = "Lincenciatura"; 
+            alumno2.promedio = 98; 
+
+           alumno2.MostrarDatos();
+
+            alumno2.VerificarAprobado(); 
+            Console.WriteLine("===================================="); 
+             Console.ReadKey(); 
+        } 
+    } 
+} 
