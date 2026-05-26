@@ -1,0 +1,71 @@
+using System; 
+namespace TiendaCelulares 
+{ 
+    // Clase Celular 
+    class Celular 
+    { 
+        // Atributos 
+        public string marca; 
+        public string modelo; 
+        public int almacenamiento; 
+        public int bateria; 
+
+        // Método para mostrar datos 
+        public void MostrarDatos() 
+        { 
+            Console.WriteLine("Marca: " + marca); 
+            Console.WriteLine("Modelo: " + modelo); 
+            Console.WriteLine("Almacenamiento: " + almacenamiento + " GB"); 
+            Console.WriteLine("Batería: " + bateria + "%"); 
+        } 
+
+        // Método para llamar 
+        public void Llamar() 
+        { 
+            Console.WriteLine("Realizando una llamada..."); 
+        } 
+
+        // Método para cargar batería 
+        public void Cargar() 
+        { 
+            bateria = 100; 
+            Console.WriteLine("El celular se ha cargado al 100%"); 
+        } 
+    } 
+
+    class Program 
+    { 
+        static void Main(string[] args) 
+        { 
+            Console.WriteLine("=========================================="); 
+            // Crear objeto 
+            Celular celular1 = new Celular(); 
+
+            // Asignar valores 
+            celular1.marca = "Samsung"; 
+            celular1.modelo = "Galaxy"; 
+            celular1.almacenamiento = 128; 
+            celular1.bateria = 50; 
+
+            // Usar métodos 
+            celular1.MostrarDatos(); 
+            celular1.Llamar(); 
+            celular1.Cargar(); 
+            Console.WriteLine("=========================================="); 
+
+            Celular celular2 = new Celular(); 
+
+            celular2.marca = "Honor"; 
+            celular2.modelo = "X8a pro"; 
+            celular2.almacenamiento = 128; 
+            celular2.bateria = 80; 
+
+            celular2.MostrarDatos(); 
+            celular2.Llamar(); 
+            celular2.Cargar(); 
+            Console.WriteLine("=========================================="); 
+
+            Console.ReadKey(); 
+        } 
+    } 
+} 
