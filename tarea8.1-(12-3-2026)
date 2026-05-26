@@ -1,0 +1,77 @@
+using System; 
+namespace Banco 
+{ 
+    // Clase CuentaBancaria 
+    class CuentaBancaria 
+    { 
+        // Atributos 
+        public string titular; 
+        public int numeroCuenta; 
+        public double saldo; 
+        // Método para mostrar información 
+        public void MostrarDatos() 
+        { 
+            Console.WriteLine("Titular: " + titular); 
+            Console.WriteLine("Número de cuenta: " + numeroCuenta); 
+            Console.WriteLine("Saldo: $" + saldo); 
+        } 
+
+        // Método para depositar dinero 
+        public void Depositar(double cantidad) 
+        { 
+            saldo += cantidad; 
+            Console.WriteLine("Depósito realizado. Nuevo saldo: $" + saldo); 
+        } 
+
+        // Método para retirar dinero 
+        public void Retirar(double cantidad) 
+        { 
+            if (cantidad <= saldo) 
+            { 
+                saldo -= cantidad; 
+                Console.WriteLine("Retiro realizado. Nuevo saldo: $" + saldo); 
+            } 
+            else 
+            { 
+                Console.WriteLine("Saldo insuficiente."); 
+            } 
+        } 
+    } 
+  
+    class Program 
+    { 
+        static void Main(string[] args) 
+        { 
+
+            Console.WriteLine("====================================="); 
+
+            // Crear objeto de la clase CuentaBancaria 
+            CuentaBancaria cuenta1 = new CuentaBancaria(); 
+
+            // Asignar valores a los atributos 
+            cuenta1.titular = "Juan Perez"; 
+            cuenta1.numeroCuenta = 12345; 
+            cuenta1.saldo = 1000; 
+
+            // Usar los métodos 
+            cuenta1.MostrarDatos(); 
+            cuenta1.Depositar(500); 
+            cuenta1.Retirar(200); 
+
+            Console.WriteLine("====================================="); 
+            //Cuenta 2 
+            CuentaBancaria cuenta2 = new CuentaBancaria(); 
+            cuenta2.titular = "Maria Rodriguez"; 
+            cuenta2.numeroCuenta = 54321; 
+            cuenta2.saldo = 2000; 
+
+            cuenta2.MostrarDatos(); 
+
+            cuenta2.Depositar(300); 
+            cuenta2.Retirar(200); 
+
+            Console.WriteLine("====================================="); 
+            Console.ReadKey(); 
+        } 
+    } 
+} 
